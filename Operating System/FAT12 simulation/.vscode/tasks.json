@@ -1,0 +1,30 @@
+{
+    // 请参阅 https://go.microsoft.com/fwlink/?LinkId=733558 
+    //查看有关 tasks.json 格式的文档
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "D:\\MinGW\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "${fileDirname}\\fileHelper.c",
+                "${fileDirname}\\dir.c",
+                "${fileDirname}\\fileSys.c",
+                "${fileDirname}\\FAT.c",
+                "${fileDirname}\\MBR.c",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "D:\\MinGW\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+/.vscode/
+*.o
+*.so
+parallelized_matmul
+openmp_matmul

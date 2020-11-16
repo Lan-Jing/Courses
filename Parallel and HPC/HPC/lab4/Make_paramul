@@ -1,0 +1,23 @@
+CC = gcc
+
+vpath %.h include
+vpath %.c src
+
+source = src/parallelized_matmul.c
+objects = parallelized_matmul.o
+target = parallelized_matmul
+
+flags = $(option)
+flags += -fopenmp -g -O3 -L./ -lparallel
+
+$(target) : $(objects)
+	gcc -o $(target) $(source) $(flags)
+
+clean :
+	-rm $(target) $(objects)
+
+cleanobj:
+	-rm $(objects)
+
+help :
+	@echo "Add -DDEBUG to enable result check."

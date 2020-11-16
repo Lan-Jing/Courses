@@ -1,0 +1,28 @@
+CC = gcc
+
+vpath %.h include
+vpath %.c src
+
+source = src/parallel_for.c src/mat.c src/helper.c
+objects = parallel_for.o mat.o helper.o
+target = parallel_for.so
+
+flags = -g -O3 -fPIC
+
+$(target) : $(objects)
+	gcc -shared -o libparallel.so $(objects)
+
+parallel_for.o : parallel_for.c
+	gcc -o parallel_for.o -c src/parallel_for.c $(flags)
+
+mat.o : mat.c
+	gcc -o mat.o -c src/mat.c $(flags)
+
+helper.o : helper.c
+	gcc -o helper.o -c src/helper.c $(flags)
+
+clean :
+	-rm $(target) $(objects)
+
+cleanobj :
+	-rm $(objects)

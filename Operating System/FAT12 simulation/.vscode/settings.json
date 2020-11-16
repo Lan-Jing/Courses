@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "filesys.h": "c",
+        "mbr.h": "c",
+        "rootdir.h": "c",
+        "fat.h": "c",
+        "windows.h": "c",
+        "filehelper.h": "c",
+        "string.h": "c"
+    }
+}
