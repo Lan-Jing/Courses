@@ -1,0 +1,291 @@
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article}
+\usepackage{style}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\frenchspacing
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+\pdfinfo{
+/Title (Relations between Food and Drink Consumption and Eating Behavior Assessment DEBQ -- a Study on Chinese College Students)
+/Author (Jing Lan)}
+\setcounter{secnumdepth}{0}  
+\begin{document}
+
+\title{Relations between Food and Drink Consumption and Eating Behavior Assessment DEBQ -- a Study on Chinese College Students}
+\author{Jing Lan\\
+Sun Yat-sen University\\
+No. 135, Xingang Xi Road \\
+Guangzhou, 510275, P. R. China \\
+}
+
+\maketitle
+
+\begin{abstract}
+\begin{quote}
+    Eating disorders and eating behavior patterns have been studied for decades.
+    Study around the late 20th century focused majorly on generalizing clinical patterns 
+    of eating disorders for diagnostic purposes. However, it was in recent years that researchers
+    have found prevalence of abnormal eating behaviors, emotional eating for instance, from people who don't necessarily meet clinical
+    disorder criteria well. Furthermore, study shown that no exclusive measurement of general eating behaviors is available so far. However, 
+    few self-administered questionnaires on reporting eating disorders and corresponding patterns, for example, EAT-40, EDI and DEBQ, have shown
+    considerable effectiveness on differentiating general abnormal eating patterns on non-clinical samples. In order to replicate robustness of DEBQ, one of the most
+    widely-used eating questionnaires, on Chinese college student samples as well as predicting their food/drink choices and intake, measured by SDSCA-style scales,
+    we collected 52 pieces of DEBQ from SYSU students. Some relations between three DEBQ subscales and food/drink consumption have been established.
+    Also, implementation of machine learning algorithms provides promising potential for 
+    relation discovery and symptom prediction for future study.  
+\end{quote}
+\end{abstract}
+
+\subsection{Keywords}
+DEBQ, food/drink consumption, college students, machine learning
+
+\section{Objective}
+\subsection{Background}
+Prior study on abnormal eating behavior patterns and eating disorders began with
+characterizing distinct kinds of eating disorders, inventing accurate diagnostic
+criteria as well as effective measurement of the extent of abnormal symptoms. The Eating Attitude Test(EAT), 
+consisting of 40 items(EAT-40), was the first self-reported questionnaire for evaluation of
+eating disorder patterns\cite{garner1979eating}. Later, a more efficient version EAT-26 was introduced
+still with great performance in validation\cite{garner1982eating}. \\
+\indent However, as research went further, the reliability of EAT was challenged. 
+First, clinical criteria of anorexia nervosa have since changed greatly along with the development of pathology,
+meaning the original clinical standard\cite{feighner1972diagnostic} used for EAT validation could be obsolete.
+Also, more types of eating disorders have been separated into different categories. For instance, \cite{russell1979bulimia} first separated 
+bulimia nervosa(overeating) from anorexia nervosa, leading to the distinction between the two most common eating disorders that are indistinguishable for 
+the original EAT-40. \\
+\indent Consequently, the original EAT test was then validated and used as a general but still effective assessment for abnormal 
+eating patterns instead of specific clinical disorders\cite{carter1984screening,gross1986validity}. This was when abnormal eating patterns 
+were discovered from non-clinical samples(at least under "modern" criteria). More questionnaires with the same aim
+were invented, including the Eating Disorder Inventory(EDI)\cite{garner1983development}, the Dutch Eating Behavior Questionnaire(DEBQ)\cite{van1986dutch}, 
+the Emotional Eating Questionnaire(EMAQ)\cite{geliebter2003emotional} and so forth. Usually higher scores in the tests indicate worse eating patterns\\
+\indent Questionnaires on detection of bad eating patterns, such as DEBQ and EMAQ, usually derived from few but major theories on the formative
+mechanism inside eating disorders. For instance, the psychosomatic theory\cite{bruch1964psychological} corresponds to EMAQ and the emotional part of DEBQ.
+Amid several validated and reliable questionnaires, DEBQ presents high theoretical flexibility while 
+maintaining extraordinary reliability\cite{hyland1989psychometric,braet1997assessment,nolan2010emotional},
+which made it an effective tool for detection of abnormal eating patterns. \\
+\indent For DEBQ, few questions are still under-researched. Firstly, until recent years, it wasn't systematically validated on Chinese samples even translated into Chinese by researchers\cite{wu2017validation,wang2018psychometric}.
+Although researchers supported its effectiveness on some Chinese samples, there are reasons to worry about. 
+For example, questions in the \textbf{External Eating} section like \textbf{"If you walk pass the baker do you have the desire to buy something delicious?"} may not work well for 
+Chinese samples considering an eating environment with much fewer \textbf{bakeries} and \textbf{cafes} and totally different eating habits. 
+Plus, the self-report biases can significantly reduce the effectiveness of the questionnaire.
+Consequently, the reliability and effectiveness of DEBQ were tested in this research.
+Secondly, positive relation has been found in prior study between restrained eating and emotional eating patterns\cite{van1986predictive,wardle1987eating,macht2002chocolate}, 
+meaning that restrained eating can bring adverse consequences to one's eating health, which is especially consistent with common sense today.
+Given the prevalence of unhealthy eating patterns among young adults\cite{neumark2011dieting}, we also studied
+this relation in the research. 
+
+\subsection{Objectives}
+In this research, we were to acheive the following objectives.
+\begin{enumerate}
+    \item to replicate reliability of DEBQ on a sample set of Chinese college students.
+    \item to discover relations between three DEBQ subscales, gender, and food/drink consumption, assessed by SDSCA-type scales.
+    \item as a minor objective, positive relation between restrained eating and unhealthy eating patterns 
+          is expected. Gender differences will also be tested. 
+\end{enumerate}
+
+\section{Method}
+\subsection{Participants} 
+Participants of this study were 52 college students from Sun Yat-sen University, a public research university 
+in China. Demographic information is presented in Table 1. All 31 males and 21 females
+were young Asian adults, with average BMI \(20.8~(\pm 2.67)\) for male samples and \(19.0~(\pm 1.82)\) for females.
+Demographic analysis shows typicality of samples used for the research.
+Few samples were discarded in demographic analysis as participants responded with abnormal values due to privacy concerns.
+
+\renewcommand\tablename{\textbf{Table}}
+\begin{table}[htbp]
+    \caption{Sample demographics (\textit{N}=52)}
+    \centering
+    \begin{tabular}{lcr} 
+        \toprule
+        Characteristics & average (\textit{N}) & precentage(range) \\
+        \midrule
+        Female (\textit{N}=21) &  & 0.404 \\ \\
+        Age (\textit{N}=20) & \(19.25~(\pm 0.44)\) & (19-20)\\ \\
+        BMI (\textit{N}=20) & \(19.1~(\pm 1.82)\) & (16.7-23.7) \\
+        ~~~Underweight & (9) & 0.45 \\
+        ~~~Normal Weight & (11) & 0.55 \\
+        ~~~Overweight & (0) & 0 \\
+        ~~~Obese & (0) & 0 \\
+        \midrule
+        Male (\textit{N}=31) &  & 0.596 \\ \\
+        Age (\textit{N}=28) & \(19.35~(\pm 0.56)\) & (19-20)\\ \\
+        BMI (\textit{N}=30) & \(20.8~(\pm 2.67)\) & (14.9-24.1)\\ 
+        ~~~Underweight & (3) & 0.1 \\
+        ~~~Normal Weight & (24) & 0.8 \\
+        ~~~Overweight & (3) & 0.1 \\
+        ~~~Obese & (0) & 0 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Measures}
+\subsubsection{Demographic information}
+Participants were asked to answer several questions about their
+age, gender, stature and weight information for demographic analysis. BMI
+ was not directly asked but computed using stature and weight data.
+Validity of self-reported collection has been supported by prior research\cite{kuczmarski2001effects}.
+We introduced Chinese instead of the WHO BMI categorization standard for grouping BMI information from
+a sample set of predominantly Chinese students. The result was introduced as control variables to
+ensure a typical sample set. Furthermore, we included gender as a variable in statistical analysis for 
+discovering sexual differences in food/drink intake.
+
+\subsubsection{Food and Drink Consumption}
+Participants answered four SDSCA-style questions about their consumption
+frequency on food and unhealthy drink. The Summary of Diabetes Self-Care
+Activities(SDSCA), was introduced aiming at measuring diabetes self-management \cite{toobert2000summary}.
+Part \textbf{Diet} of the self-administered questionnaire includes questions that well measure fatty food and vegetable consumption frequency.
+We adapted the question form and reduced day range from 7 days to 4 for simplification and higher reliability, considering self-report biases.
+Each question asked \textbf{"How many of the last four days did you eat(drink) ..."}, in order to measure participants' 
+tendency of healthy/unhealthy intake. Concretely, four questions have been asked as follows:
+\begin{table}[htbp]
+    \caption{Questions on Food/Drink Consumption}
+    \centering
+    \begin{tabular}{l}
+        \toprule
+        Questions (range:0-4) \\
+        \midrule
+        How many of the last four days did you: \\
+        1. have snacks or late supper besides the normal meals? \\
+        2. eat four or more servings of vegetables and fruits? \\
+        3. eat any high-fat food or full-fat dairy product? \\
+        4. drink high-sugar soft drink? \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsubsection{Eating Behavior Patterns}
+Participants were then asked to answer 25 Likert-style DEBQ questions evaluating
+their eating behavior patterns. DEBQ is a widely-used, self-reported questionnaire with
+three subscales\cite{van1986dutch}, each derived from one of the three main formative theories of eating disorders, 
+and has since been validated as with high reliability and validity
+\cite{van1986predictive,hyland1989psychometric,wardle1987eating,braet1997assessment}.
+Effectiveness of DEBQ as well as its Chinese version C-DEBQ has also been verified recently 
+\cite{wu2017validation,wang2018psychometric}. In the study, 7 questions on \textbf{External Eating},
+9 questions on \textbf{Emotional Eating} and 9 questions on \textbf{Restrained Eating}
+were translated into Chinese and randomly placed in the electronic question sheet in order to reduce self-report biases.
+Three External Eating questions were removed due to their low critical ratios (CR\( < 3.00\))
+\cite{wu2017validation}. We also removed four questions on diffused emotional
+eating that were not relevant in order to simplify the questionnaire.
+
+\subsection{Procedure}
+The Web-based questionnaire was distributed through online communication platforms.
+Participants who volunteered to take part in used their cellphones to answer the questionnaires.
+They sequentially answered demographic questions, food/drink consumption questions and finally
+DEBQ eating behavior questions. Results were then submitted and immediately collected by the Web-based questionnaire platform.
+All 52 participants returned fully answered, valid questionnaires for further analysis. 
+No specific personal data was asked or collected throughout the research procedure. 
+
+\subsection{Statistical Analysis}
+After all questionnaires and corresponding data have been collected by the online questionnaire platform,
+We first tested the reliability of the questionnaire through \textbf{SPSS} statistical analysis for Cronbach's \(\alpha\) indexes
+on each part of the questionnaire separately then as a whole. \\
+\indent Then, \textbf{MATLAB} program script was launched to
+rearrange all data, filter extreme, abnormal values in demographic information,
+then produce final demographic statistics and three subscales in DEBQ parts. \\
+\indent Finally, we took advantage of the third-party Python package \textbf{sklearn}\cite{scikit-learn} to implement
+concise and efficient machine learning algorithms to reveal relations between variables.
+\textbf{Sklearn} is an integrated machine learning package that implements several well-designed 
+software tools that support data processing and accessible machine learning algorithms\cite{sklearn_api}.
+In this research, gender and three subscales of DEBQ were treated as input, while food/drink 
+consumption indexes were tested as output.
+
+\section{Results}
+\subsection{Reliability}
+We first tested the reliability of DEBQ. Cronbach's \(\alpha\) indexes have been computed for 
+each part of the questionnaire and as a whole. \textbf{Table 3} shows the results.
+\begin{table}[htbp]
+    \caption{Reliability measured by \(\alpha\)}
+    \centering
+    \begin{tabular}{lr}
+        \toprule
+        part & reliability \\
+        \midrule
+        DEBQ & 0.921 \\
+        ~~Emotional Eating & 0.964 \\
+        ~~Restrained Eating & 0.910 \\
+        ~~External Eating & 0.587 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+The overall reliability of DEBQ is solid(\(>= 0.9\)). Also, \textbf{Emotional Eating} and
+\textbf{Restrained Eating} parts present perfect reliability. However, the \textbf{External Eating} part present
+relatively poor reliability, which is consistent with our hypothesis and prior study.
+
+\subsection{Relation Discovery}
+\textbf{Figure 1, 2 and 3} present the diagrams indicating relations
+between four SDSCA-type results and three DEBQ eating subscales. Due to the limited 
+size of the data set, the overall relations between variables are not prominently clear.
+Male samples are labeled yellow in the diagrams, while females are labeled red.
+As for the curves, yellow and red lines corresponds to male and female samples, respectively.
+Those blue lines are for the whole data set.
+\begin{figure}[h]
+    \caption{\textbf{Emotional Eating}}
+    \centering
+    \includegraphics[scale=0.4]{emo.png}
+\end{figure}
+\begin{figure}[h]
+    \caption{\textbf{External Eating}}
+    \centering
+    \includegraphics[scale=0.4]{ext.png}
+\end{figure}
+\begin{figure}[h]
+    \caption{\textbf{Restrained Eating}}
+    \centering
+    \includegraphics[scale=0.4]{res.png}
+\end{figure}
+
+\section{Discussion}
+\subsection{Reliability}
+The reliability of DEBQ as a whole questionnaire has been confirmed.
+Although part \textbf{External Eating} always present lowest reliability among the three subscales\cite{nolan2010emotional,wu2017validation},
+the result is still surprising. One possible reason for the extreme outcome is the removal of three less-critical questions.
+Despite poor importance in the section, these three questions may still make non-negligible contributions to the internal consistency.
+Further research should look into the problem, as a good balance between effectiveness and reliability should be achieved for design improvement.
+
+\subsection{Relation Discovery}
+\subsubsection{DEBQ scores}
+To our surprise, gender differences are significant for DEBQ subscales. In all three sections, females score higher than males on average.
+The difference is particularly prominent on \textbf{Emotional Eating} and \textbf{Restrained Eating},
+while slight difference on \textbf{External Eating} is observed. Higher scores for the female is consistent with that from
+research on Taiwanese parents\cite{wang2018psychometric}, although two samples didn't share similar age patterns.
+Prior study on samples of the French elderly didn't find gender difference on the scores\cite{bailly2012dutch}.
+This result challenged the reliability of DEBQ, as no gender difference should be observed to ensure consistent criteria.
+We hypothesize that age probably could affect DEBQ scales systematically, as different interpretations or other differences could be influential.
+This also means that in practice criteria applied to samples should be adjusted according to both age and gender. 
+\subsubsection{DEBQ to Consumption}
+As for consumption, there are several significant relations with DEBQ subscales. First, for snacks and late supper frequency,
+\textbf{Emotional Eating} is a significant predictor, both for males and females. This is consistent with prior study that high
+impulsivity contributes to high fatty food intake\cite{limbers2015executive}. Second, contrary to our hypothesis, none of the three
+subscales present correlation with healthy food intake, measured by vegetable/fruit frequency in the past 4 days. The result implied statistically consistent vegetable and fruit
+intake among Chinese student samples. We then propose that this outcome is affected by food structure differences. Then, strong positive relation between 
+\textbf{External Eating} for females and high-fat food consumption is observed. However, given the context of this research, 
+the possible explanation is not obvious. Finally, we found positive relation between high-sugar drink intake and \textbf{Emotional Eating, External Eating}
+scores for females. Given soft drink as a kind of common unhealthy intake, this finding can also be interpreted as affected by low impulsivity control in females. \\
+\smallskip
+
+The overall results show mediocre effectiveness. Given DEBQ as a long-tested but solid eating questionnaire, this may come from the ineffectiveness
+of SDSCA-type questions we designed. The four-day range could inhibit effectiveness and bring up randomness of the answers, while a larger range could bring up biases.
+For self-reported questionnaires, randomness and self-report biases can both be influential, thus requiring balance between effectiveness and reliability for future test design.
+Besides differences in eating structure and habits, the effectiveness of DEBQ itself is still questionable, as little structure has been found in male samples.
+Also, unexpected high scores on \textbf{Restrained Eating} and \textbf{External Eating} for females are noticeable. These results challenged the reliability of DEBQ
+as a general detection tool for unhealthy eating behaviors, since different understandings on the questions by college students, particularly female students, may have greatly affected the results. 
+The vague differences between 'bad' and 'good' eating patterns, implied by the questionnaire, probably magnified the biases of the examinees.
+Additionally, the self-report questionnaires present unavoidable drawbacks, as actual physical conditions of the tested samples are not clear. Detailed and behavior-based
+research should be adapted for more in-depth study.
+
+\bibliography{file} % 引用文件
+\bibliographystyle{aaai} % 引用格式
+
+\section{Acknowledgement}
+This research is supported by my teammates and their selfless help. Gratefulness also goes to the supervisor Jing Chen, from whom
+I learned valuable skills to finish this research. 
+
+\end{document}
