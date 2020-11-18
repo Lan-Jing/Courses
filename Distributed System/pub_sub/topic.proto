@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+package topic;
+
+// server of the pub/sub system that receive, store and distribute messages.
+service topic {
+    // publisher publishes a message to the topic
+    rpc publish (pubMessage) returns (ack) {}
+    // subscriber subscribes messages from the topic
+    rpc subscribe (subscriberInfo) returns (messageList) {}
+    // subscriber responds to the topic
+    rpc sub_ack (ack) returns (empty) {}
+}
+
+message ack {
+    optional int32 ack = 1;
+}
+
+message pubMessage {
+    optional int32 category = 1;
+    optional int32 timeoutLimit = 2;
+    optional string content = 3;
+}
+
+message subMessage {
+    optional int32 category = 1;
+    optional string content = 2;
+}
+
+message messageList {
+    optional int32 ack = 1;
+    repeated subMessage message = 2;
+}
+
+message subscriberInfo {
+    repeated int32 categories = 1;
+}
+
+message empty {}
