@@ -4,6 +4,7 @@ import data
 gox = (-1, 1, 0, 0)
 goy = (0, 0, 1, -1)
 
+# heuristic function: Manhattan distance
 def h(loca, locb):
     return abs(loca[0]-locb[0]) + abs(loca[1]-locb[1])
 
@@ -33,7 +34,7 @@ def IDA_dfs(graph, loc, eloc, bound, path, visited):
     for i in range(4):
         newLoc[0] = loc[0] + goy[i]
         newLoc[1] = loc[1] + gox[i]
-        # pruning with shortest path recored by ''visited''
+        # pruning with smallest depth recorded by ''visited''
         if graph[newLoc[0]][newLoc[1]] == '1' or visited[newLoc[0]][newLoc[1]] <= len(path):
             continue
         IDA_dfs(graph, tuple(newLoc), eloc, bound, path, visited)
@@ -47,12 +48,13 @@ def IDA_search(graph):
 
     global resPath
 
+    # iterative depth searching
     for bound in range(h(sloc, eloc), np.shape(graph)[0] * np.shape(graph)[1]):
-        visited = np.full(np.shape(graph), 0x3f3f3f3f, dtype=int)
         print('Bound: {}'.format(bound))
+        visited = np.full(np.shape(graph), 0x3f3f3f3f, dtype=int)
         IDA_dfs(graph, sloc, eloc, bound, [], visited)
-        if len(resPath) == 0:
-            continue
-        return resPath
+        
+        if len(resPath) != 0:
+            return resPath
 
     return []

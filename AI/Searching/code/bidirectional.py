@@ -31,6 +31,7 @@ def bd_search(graph):
     fqueue.put([sloc])
     bqueue.put([eloc])
     while fqueue.empty() == 0 or bqueue.empty() == 0:
+        # the forward phase
         node, loc = fetch_node(fqueue)
         while visited[loc[0]][loc[1]] == 1 and fqueue.empty() == 0:
             node, loc = fetch_node(fqueue)
@@ -52,6 +53,7 @@ def bd_search(graph):
                     newNode.append(tuple(newLoc))
                     fqueue.put(newNode)
 
+        # the backward phase
         node, loc = fetch_node(bqueue)
         while visited[loc[0]][loc[1]] == 2 and bqueue.empty() == 0:
             node, loc = fetch_node(bqueue)
