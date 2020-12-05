@@ -1,0 +1,1186 @@
+--------------------------------------------------------------------------------
+Command:            mpirun -np 4 ./heated_plate_MPI
+Massif arguments:   --massif-out-file=result/out --stacks=yes --time-unit=B
+ms_print arguments: result/out
+--------------------------------------------------------------------------------
+
+
+    KB
+556.1^                                                              ::::::    
+     |                               @@@@@     :::::     :#####     :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :         
+     |                               @         :         :#         :      :: 
+     |                               @         :         :#         :      :: 
+     |                        @:     @         :         :#         :      :: 
+     |               ::::@::::@:     @         :         :#         :      ::@
+     |       @@@:@@::::::@::::@::::::@    ::::::    ::::::#    ::::::     :::@
+   0 +----------------------------------------------------------------------->MB
+     0                                                                   7.292
+
+Number of snapshots: 80
+ Detailed snapshots: [4, 9, 14, 16, 17, 21, 23, 39, 50, 51, 52, 53, 61, 67 (peak), 77]
+
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1         40,280            3,640                0             0        3,640
+  2         92,424            1,432                0             0        1,432
+  3        161,120            1,328                0             0        1,328
+  4        219,880            1,176                0             0        1,176
+00.00% (0B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  5        271,824            1,584                0             0        1,584
+  6        332,352            1,328                0             0        1,328
+  7        388,912            1,584                0             0        1,584
+  8        438,560              848               24            16          808
+  9        477,680           28,304            9,155           149       19,000
+32.35% (9,155B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->28.43% (8,048B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->28.43% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+|   ->28.43% (8,048B) 0x114869: np_fn (utils.c:765)
+|     ->28.43% (8,048B) 0x12E6F1: match_arg (args.c:155)
+|       ->28.43% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+|         ->28.43% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+|           ->28.43% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+|             ->28.43% (8,048B) 0x10F449: main (mpiexec.c:147)
+|               
+->03.72% (1,054B) 0x4A5E50E: strdup (strdup.c:42)
+| ->03.52% (997B) 0x12F004: HYDU_find_in_path (args.c:68)
+| | ->03.52% (997B) 0x116BE9: HYD_uii_mpx_get_parameters (utils.c:1762)
+| |   ->03.52% (997B) 0x10F449: main (mpiexec.c:147)
+| |     
+| ->00.20% (57B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->00.19% (53B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 10        539,000           26,472            9,150           138       17,184
+ 11        608,400           10,800            8,314           182        2,304
+ 12        654,752           12,960           11,049           951          960
+ 13        733,896           27,864           22,148         1,668        4,048
+ 14        795,992           34,520           28,217         2,223        4,080
+81.74% (28,217B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->46.63% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->23.31% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->23.31% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->23.31% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->23.31% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->23.31% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->23.31% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->23.31% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->23.31% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->23.31% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->23.31% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->11.87% (4,096B) 0x4A40E83: _IO_file_doallocate (filedoalloc.c:101)
+| ->11.87% (4,096B) 0x4A5104F: _IO_doallocbuf (genops.c:347)
+|   ->11.87% (4,096B) 0x4A4FE23: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+|     ->11.87% (4,096B) 0x4A42897: getdelim (iogetdelim.c:73)
+|     | ->11.87% (4,096B) 0x4B02AD1: nss_parse_file (nsswitch.c:576)
+|     | | ->11.87% (4,096B) 0x4B02AD1: __nss_database_lookup2 (nsswitch.c:135)
+|     | |   ->11.87% (4,096B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|     | |     ->11.87% (4,096B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|     | |       ->11.87% (4,096B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|     | |         ->11.87% (4,096B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|     | |           ->11.87% (4,096B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|     | |             ->11.87% (4,096B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|     | |               ->11.87% (4,096B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|     | |                 ->11.87% (4,096B) 0x10FF1E: main (mpiexec.c:286)
+|     | |                   
+|     | ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|     | 
+|     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|     
+->10.30% (3,556B) 0x4A5E50E: strdup (strdup.c:42)
+| ->08.93% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->08.93% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->08.93% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->08.93% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->08.93% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.01% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->01.37% (472B) in 18 places, all below massif's threshold (1.00%)
+|   
+->04.52% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->04.52% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->04.52% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->04.52% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->04.52% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->04.52% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->04.52% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->02.65% (916B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+| ->02.65% (916B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+|   ->02.65% (916B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+|     ->02.65% (916B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+|       ->02.65% (916B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|         ->02.65% (916B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|           ->02.65% (916B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|             ->02.65% (916B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|               ->02.65% (916B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                 ->02.65% (916B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                   ->02.65% (916B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                     ->02.65% (916B) 0x10FF1E: main (mpiexec.c:286)
+|                       
+->02.46% (849B) in 15 places, all below massif's threshold (1.00%)
+| 
+->01.95% (672B) 0x1302A0: HYDU_env_create (env.c:114)
+| ->01.95% (672B) 0x130478: HYDU_append_env_to_list (env.c:191)
+|   ->01.88% (648B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+|   | ->01.88% (648B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+|   |   ->01.88% (648B) 0x10FA59: main (mpiexec.c:269)
+|   |     
+|   ->00.07% (24B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->01.37% (472B) 0x4A41AAD: __fopen_internal (iofopen.c:65)
+  ->01.37% (472B) 0x4A41AAD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+    ->01.37% (472B) 0x4B02A62: nss_parse_file (nsswitch.c:552)
+    | ->01.37% (472B) 0x4B02A62: __nss_database_lookup2 (nsswitch.c:135)
+    |   ->01.37% (472B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+    |     ->01.37% (472B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+    |       ->01.37% (472B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+    |         ->01.37% (472B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+    |           ->01.37% (472B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+    |             ->01.37% (472B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+    |               ->01.37% (472B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+    |                 ->01.37% (472B) 0x10FF1E: main (mpiexec.c:286)
+    |                   
+    ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 15        838,808           33,288           25,254         2,354        5,680
+ 16        909,136           37,888           29,822         2,378        5,688
+78.71% (29,822B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->42.48% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->21.24% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->21.24% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->21.24% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->21.24% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->21.24% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->21.24% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->21.24% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->21.24% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->21.24% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->21.24% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->10.81% (4,096B) 0x4A40E83: _IO_file_doallocate (filedoalloc.c:101)
+| ->10.81% (4,096B) 0x4A5104F: _IO_doallocbuf (genops.c:347)
+|   ->10.81% (4,096B) 0x4A4FE23: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+|     ->10.81% (4,096B) 0x4A4CEB0: readline_slow (readline.c:44)
+|     | ->10.81% (4,096B) 0x4A4CEB0: __libc_readline_unlocked (readline.c:153)
+|     |   ->10.81% (4,096B) 0x4FB459F: ???
+|     |     ->10.81% (4,096B) 0x4FB57FD: ???
+|     |       ->10.81% (4,096B) 0x4FB5934: ???
+|     |         ->10.81% (4,096B) 0x4AEFD2D: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:315)
+|     |           ->10.81% (4,096B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|     |             ->10.81% (4,096B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|     |               ->10.81% (4,096B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|     |                 ->10.81% (4,096B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|     |                   ->10.81% (4,096B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|     |                     ->10.81% (4,096B) 0x10FF1E: main (mpiexec.c:286)
+|     |                       
+|     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|     
+->09.39% (3,556B) 0x4A5E50E: strdup (strdup.c:42)
+| ->08.14% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->08.14% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->08.13% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->08.13% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->08.13% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.01% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->01.25% (472B) in 18 places, all below massif's threshold (1.00%)
+|   
+->04.12% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->04.12% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->04.12% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->04.12% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->04.12% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->04.12% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->04.12% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->03.17% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->03.17% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->03.17% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->03.17% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->03.17% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->03.17% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->03.17% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->03.17% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->03.17% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->03.17% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->03.17% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->03.17% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->03.17% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->03.17% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->03.17% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->03.17% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->03.17% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->03.17% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->03.17% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->03.17% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->03.17% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->03.02% (1,146B) in 22 places, all below massif's threshold (1.00%)
+| 
+->02.70% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+| ->02.70% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+|   ->02.70% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+|     ->02.70% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+|       ->02.70% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|         ->02.70% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|           ->02.70% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|             ->02.70% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|               ->02.70% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                 ->02.70% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                   ->02.70% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                     ->02.70% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+|                       
+->01.77% (672B) 0x1302A0: HYDU_env_create (env.c:114)
+| ->01.77% (672B) 0x130478: HYDU_append_env_to_list (env.c:191)
+|   ->01.71% (648B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+|   | ->01.71% (648B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+|   |   ->01.71% (648B) 0x10FA59: main (mpiexec.c:269)
+|   |     
+|   ->00.06% (24B) in 1+ places, all below ms_print's threshold (01.00%)
+|   
+->01.25% (472B) 0x4A41AAD: __fopen_internal (iofopen.c:65)
+  ->01.25% (472B) 0x4A41AAD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+    ->01.25% (472B) 0x4FB57C2: ???
+    | ->01.25% (472B) 0x4FB5934: ???
+    |   ->01.25% (472B) 0x4AEFD2D: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:315)
+    |     ->01.25% (472B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+    |       ->01.25% (472B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+    |         ->01.25% (472B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+    |           ->01.25% (472B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+    |             ->01.25% (472B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+    |               ->01.25% (472B) 0x10FF1E: main (mpiexec.c:286)
+    |                 
+    ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 17        961,120           41,120           32,434         2,398        6,288
+78.88% (32,434B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->39.14% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->19.57% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->19.57% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->19.57% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->19.57% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->19.57% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->19.57% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->19.57% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->19.57% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->19.57% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->19.57% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->17.56% (7,220B) 0x4AF9518: __netlink_request (ifaddrs.c:217)
+| ->17.08% (7,024B) 0x4AF9775: getifaddrs_internal (ifaddrs.c:336)
+| | ->17.08% (7,024B) 0x4AFA457: getifaddrs (ifaddrs.c:838)
+| |   ->17.08% (7,024B) 0x143936: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+| |     ->17.08% (7,024B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+| |       ->17.08% (7,024B) 0x10FF1E: main (mpiexec.c:286)
+| |         
+| ->00.48% (196B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->08.65% (3,556B) 0x4A5E50E: strdup (strdup.c:42)
+| ->07.50% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->07.50% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->07.50% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->07.50% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->07.50% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->01.15% (472B) in 18 places, all below massif's threshold (1.00%)
+|   
+->03.79% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->03.79% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->03.79% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->03.79% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->03.79% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->03.79% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->03.79% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->02.92% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->02.92% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->02.92% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->02.92% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->02.92% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->02.92% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->02.92% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->02.92% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->02.92% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->02.92% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->02.92% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->02.92% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->02.92% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->02.92% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->02.92% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->02.92% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->02.92% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->02.92% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->02.92% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->02.92% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->02.92% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->02.69% (1,106B) in 26 places, all below massif's threshold (1.00%)
+| 
+->02.49% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+| ->02.49% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+|   ->02.49% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+|     ->02.49% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+|       ->02.49% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|         ->02.49% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|           ->02.49% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|             ->02.49% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|               ->02.49% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                 ->02.49% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                   ->02.49% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                     ->02.49% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+|                       
+->01.63% (672B) 0x1302A0: HYDU_env_create (env.c:114)
+  ->01.63% (672B) 0x130478: HYDU_append_env_to_list (env.c:191)
+    ->01.58% (648B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+    | ->01.58% (648B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+    |   ->01.58% (648B) 0x10FA59: main (mpiexec.c:269)
+    |     
+    ->00.06% (24B) in 1+ places, all below ms_print's threshold (01.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 18      1,012,800           29,584           25,733         2,483        1,368
+ 19      1,054,880           37,216           33,764         2,492          960
+ 20      1,115,536           47,904           41,951         3,009        2,944
+ 21      1,175,352           54,584           50,025         2,967        1,592
+91.65% (50,025B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->29.49% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->14.74% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->14.74% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->14.74% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->14.74% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->14.74% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->14.74% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->14.74% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->14.74% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->14.74% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->14.74% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->14.66% (8,000B) 0x11CFED: HYD_pmcd_pmi_fill_in_proxy_args (pmiserv_utils.c:54)
+| ->14.66% (8,000B) 0x117F04: HYD_pmci_launch_procs (pmiserv_pmci.c:118)
+|   ->14.66% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->14.66% (8,000B) 0x11E35F: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:295)
+| ->14.66% (8,000B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+|   ->14.66% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->14.66% (8,000B) 0x11E44A: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:311)
+| ->14.66% (8,000B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+|   ->14.66% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->06.96% (3,799B) 0x4A5E50E: strdup (strdup.c:42)
+| ->05.65% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->05.65% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->05.65% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->05.65% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->05.65% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->01.31% (715B) in 49 places, all below massif's threshold (1.00%)
+|   
+->03.07% (1,674B) in 40 places, all below massif's threshold (1.00%)
+| 
+->02.86% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->02.86% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->02.86% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->02.86% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->02.86% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->02.86% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->02.86% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->02.20% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->02.20% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->02.20% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->02.20% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->02.20% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->02.20% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->02.20% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->02.20% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->02.20% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->02.20% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->02.20% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->02.20% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->02.20% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->02.20% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->02.20% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->02.20% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->02.20% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->02.20% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->02.20% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->02.20% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->02.20% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.87% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+| ->01.87% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+|   ->01.87% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+|     ->01.87% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+|       ->01.87% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|         ->01.87% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|           ->01.87% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|             ->01.87% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|               ->01.87% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                 ->01.87% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                   ->01.87% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                     ->01.87% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+|                       
+->01.23% (672B) 0x1302A0: HYDU_env_create (env.c:114)
+  ->01.23% (672B) 0x130478: HYDU_append_env_to_list (env.c:191)
+    ->01.19% (648B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+    | ->01.19% (648B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+    |   ->01.19% (648B) 0x10FA59: main (mpiexec.c:269)
+    |     
+    ->00.04% (24B) in 1+ places, all below ms_print's threshold (01.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 22      1,245,264           54,704           50,052         3,060        1,592
+ 23      1,298,064           56,608           42,293         3,315       11,000
+74.71% (42,293B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->28.43% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->14.22% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->14.22% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->14.22% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->14.22% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->14.22% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->14.22% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->14.22% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->14.22% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->14.22% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->14.22% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->14.13% (8,000B) 0x11CFED: HYD_pmcd_pmi_fill_in_proxy_args (pmiserv_utils.c:54)
+| ->14.13% (8,000B) 0x117F04: HYD_pmci_launch_procs (pmiserv_pmci.c:118)
+|   ->14.13% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->14.13% (8,000B) 0x11E35F: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:295)
+| ->14.13% (8,000B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+|   ->14.13% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->07.09% (4,015B) 0x4A5E50E: strdup (strdup.c:42)
+| ->05.45% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->05.45% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->05.44% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->05.44% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->05.44% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->01.64% (931B) in 66 places, all below massif's threshold (1.00%)
+|   
+->03.05% (1,726B) in 42 places, all below massif's threshold (1.00%)
+| 
+->02.76% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->02.76% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->02.76% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->02.76% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->02.76% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->02.76% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->02.76% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->02.12% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->02.12% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->02.12% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->02.12% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->02.12% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->02.12% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->02.12% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->02.12% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->02.12% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->02.12% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->02.12% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->02.12% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->02.12% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->02.12% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->02.12% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->02.12% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->02.12% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->02.12% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->02.12% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->02.12% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->02.12% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.81% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+| ->01.81% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+|   ->01.81% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+|     ->01.81% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+|       ->01.81% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|         ->01.81% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|           ->01.81% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|             ->01.81% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|               ->01.81% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                 ->01.81% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                   ->01.81% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                     ->01.81% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+|                       
+->01.19% (672B) 0x1302A0: HYDU_env_create (env.c:114)
+  ->01.19% (672B) 0x130478: HYDU_append_env_to_list (env.c:191)
+    ->01.14% (648B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+    | ->01.14% (648B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+    |   ->01.14% (648B) 0x10FA59: main (mpiexec.c:269)
+    |     
+    ->00.04% (24B) in 1+ places, all below ms_print's threshold (01.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 24      1,354,048           56,624           42,283         3,349       10,992
+ 25      1,391,496           56,744           42,385         3,367       10,992
+ 26      1,438,224           56,720           42,348         3,380       10,992
+ 27      1,475,640           56,840           42,448         3,400       10,992
+ 28      1,522,368           56,848           42,459         3,397       10,992
+ 29      1,559,704           56,888           42,462         3,434       10,992
+ 30      1,606,384           56,960           42,520         3,448       10,992
+ 31      1,643,752           56,984           42,532         3,460       10,992
+ 32      1,690,384           57,008           42,537         3,479       10,992
+ 33      1,727,720           57,048           42,568         3,488       10,992
+ 34      1,776,912           55,312           42,615         3,513        9,184
+ 35      1,811,768           57,160           42,624         3,544       10,992
+ 36      1,865,360           55,152           42,646         3,546        8,960
+ 37      1,940,816           58,320           43,728         3,600       10,992
+ 38      1,994,472           56,296           43,722         3,614        8,960
+ 39      2,060,544           61,360           46,731         3,629       11,000
+76.16% (46,731B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->26.23% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->13.12% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->13.12% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->13.12% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->13.12% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->13.12% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->13.12% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->13.12% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->13.12% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->13.12% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->13.12% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->13.04% (8,000B) 0x11CFED: HYD_pmcd_pmi_fill_in_proxy_args (pmiserv_utils.c:54)
+| ->13.04% (8,000B) 0x117F04: HYD_pmci_launch_procs (pmiserv_pmci.c:118)
+|   ->13.04% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->13.04% (8,000B) 0x11E35F: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:295)
+| ->13.04% (8,000B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+|   ->13.04% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->08.95% (5,489B) 0x4A5E50E: strdup (strdup.c:42)
+| ->05.03% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->05.03% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->05.02% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->05.02% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->05.02% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->02.44% (1,496B) 0x130132: HYDU_env_to_str (env.c:22)
+| | ->02.44% (1,496B) 0x11EAAC: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:401)
+| |   ->02.44% (1,496B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+| |     ->02.44% (1,496B) 0x10FE5F: main (mpiexec.c:331)
+| |       
+| ->01.48% (909B) in 65 places, all below massif's threshold (1.00%)
+|   
+->05.01% (3,072B) 0x133C7E: HYDU_str_alloc_and_join (string.c:66)
+| ->04.89% (2,998B) 0x13015C: HYDU_env_to_str (env.c:26)
+| | ->04.89% (2,998B) 0x11EAAC: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:401)
+| |   ->04.89% (2,998B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+| |     ->04.89% (2,998B) 0x10FE5F: main (mpiexec.c:331)
+| |       
+| ->00.12% (74B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->02.64% (1,618B) in 41 places, all below massif's threshold (1.00%)
+| 
+->02.54% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->02.54% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->02.54% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->02.54% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->02.54% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->02.54% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->02.54% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->01.96% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->01.96% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->01.96% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->01.96% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->01.96% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->01.96% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->01.96% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->01.96% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->01.96% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->01.96% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->01.96% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->01.96% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->01.96% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->01.96% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->01.96% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->01.96% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->01.96% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->01.96% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->01.96% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->01.96% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->01.96% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.67% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+| ->01.67% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+|   ->01.67% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+|     ->01.67% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+|       ->01.67% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|         ->01.67% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|           ->01.67% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|             ->01.67% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|               ->01.67% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                 ->01.67% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                   ->01.67% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                     ->01.67% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+|                       
+->01.10% (672B) 0x1302A0: HYDU_env_create (env.c:114)
+  ->01.10% (672B) 0x130478: HYDU_append_env_to_list (env.c:191)
+    ->01.06% (648B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+    | ->01.06% (648B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+    |   ->01.06% (648B) 0x10FA59: main (mpiexec.c:269)
+    |     
+    ->00.04% (24B) in 1+ places, all below ms_print's threshold (01.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 40      2,133,936           49,680           45,237         3,555          888
+ 41      2,200,384           58,672           45,381         3,707        9,584
+ 42      2,251,216           58,144           45,463         3,713        8,968
+ 43      2,284,592           58,752           45,432         3,736        9,584
+ 44      2,335,296           58,208           45,484         3,756        8,968
+ 45      2,368,656           58,864           45,493         3,787        9,584
+ 46      2,419,600           58,528           45,761         3,799        8,968
+ 47      2,469,920           60,640           45,732         3,916       10,992
+ 48      2,502,432           50,736           45,774         3,986          976
+ 49      2,554,888           43,416           38,417         4,055          944
+ 50      2,588,600           75,768           38,396         4,012       33,360
+50.68% (38,396B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->21.24% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->10.62% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->10.62% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->10.62% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->10.62% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->10.62% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->10.62% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->10.62% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->10.62% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->10.62% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->10.62% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->10.56% (8,000B) 0x11CFED: HYD_pmcd_pmi_fill_in_proxy_args (pmiserv_utils.c:54)
+| ->10.56% (8,000B) 0x117F04: HYD_pmci_launch_procs (pmiserv_pmci.c:118)
+|   ->10.56% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->10.08% (7,641B) 0x4A5E50E: strdup (strdup.c:42)
+| ->05.22% (3,956B) 0x133F9C: HYDU_strdup_list (string.c:125)
+| | ->05.22% (3,956B) 0x11FBF1: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:489)
+| |   ->05.22% (3,956B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+| |     ->05.22% (3,956B) 0x10FE5F: main (mpiexec.c:331)
+| |       
+| ->04.07% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->04.07% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->04.07% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->04.07% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->04.07% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.79% (601B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->03.79% (2,875B) in 46 places, all below massif's threshold (1.00%)
+| 
+->02.06% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->02.06% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->02.06% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->02.06% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->02.06% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->02.06% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->02.06% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->01.59% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->01.59% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->01.59% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->01.59% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->01.59% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->01.59% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->01.59% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->01.59% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->01.59% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->01.59% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->01.59% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->01.59% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->01.59% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->01.59% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->01.59% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->01.59% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->01.59% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->01.59% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->01.59% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->01.59% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->01.59% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.35% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+  ->01.35% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+    ->01.35% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+      ->01.35% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+        ->01.35% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+          ->01.35% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+            ->01.35% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+              ->01.35% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+                ->01.35% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+                  ->01.35% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+                    ->01.35% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+                      ->01.35% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+                        
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 51      2,596,928           84,096           38,396         4,012       41,688
+45.66% (38,396B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->19.14% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->09.57% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->09.57% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->09.57% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->09.57% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->09.57% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->09.57% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->09.57% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->09.57% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->09.57% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->09.57% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->09.51% (8,000B) 0x11CFED: HYD_pmcd_pmi_fill_in_proxy_args (pmiserv_utils.c:54)
+| ->09.51% (8,000B) 0x117F04: HYD_pmci_launch_procs (pmiserv_pmci.c:118)
+|   ->09.51% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->09.09% (7,641B) 0x4A5E50E: strdup (strdup.c:42)
+| ->04.70% (3,956B) 0x133F9C: HYDU_strdup_list (string.c:125)
+| | ->04.70% (3,956B) 0x11FBF1: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:489)
+| |   ->04.70% (3,956B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+| |     ->04.70% (3,956B) 0x10FE5F: main (mpiexec.c:331)
+| |       
+| ->03.67% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->03.67% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->03.66% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->03.66% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->03.66% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->00.71% (601B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->03.42% (2,875B) in 46 places, all below massif's threshold (1.00%)
+| 
+->01.86% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->01.86% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->01.86% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->01.86% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->01.86% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->01.86% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->01.86% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->01.43% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->01.43% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->01.43% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->01.43% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->01.43% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->01.43% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->01.43% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->01.43% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->01.43% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->01.43% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->01.43% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->01.43% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->01.43% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->01.43% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->01.43% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->01.43% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->01.43% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->01.43% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->01.43% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->01.43% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->01.43% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.22% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+  ->01.22% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+    ->01.22% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+      ->01.22% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+        ->01.22% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+          ->01.22% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+            ->01.22% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+              ->01.22% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+                ->01.22% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+                  ->01.22% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+                    ->01.22% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+                      ->01.22% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+                        
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 52      2,598,176           85,136           39,393         4,031       41,712
+46.27% (39,393B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->18.91% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->09.45% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->09.45% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->09.45% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->09.45% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->09.45% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->09.45% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->09.45% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->09.45% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->09.45% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->09.45% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->10.15% (8,638B) 0x4A5E50E: strdup (strdup.c:42)
+| ->04.65% (3,956B) 0x133F9C: HYDU_strdup_list (string.c:125)
+| | ->04.65% (3,956B) 0x11FBF1: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:489)
+| |   ->04.65% (3,956B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+| |     ->04.65% (3,956B) 0x10FE5F: main (mpiexec.c:331)
+| |       
+| ->03.62% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->03.62% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->03.62% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->03.62% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->03.62% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->01.17% (997B) 0x12F004: HYDU_find_in_path (args.c:68)
+| | ->01.17% (997B) 0x12F89D: HYDU_find_full_path (args.c:370)
+| | | ->01.17% (997B) 0x141D7B: ssh_get_path (external_common_launch.c:22)
+| | |   ->01.17% (997B) 0x141D7B: HYDT_bscd_common_launch_procs (external_common_launch.c:113)
+| | |     ->01.17% (997B) 0x135334: HYDT_bsci_launch_procs (bsci_launch.c:17)
+| | |       ->01.17% (997B) 0x1180F3: HYD_pmci_launch_procs (pmiserv_pmci.c:132)
+| | |         ->01.17% (997B) 0x10FE5F: main (mpiexec.c:331)
+| | |           
+| | ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| | 
+| ->00.71% (601B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.40% (8,000B) 0x11CFED: HYD_pmcd_pmi_fill_in_proxy_args (pmiserv_utils.c:54)
+| ->09.40% (8,000B) 0x117F04: HYD_pmci_launch_procs (pmiserv_pmci.c:118)
+|   ->09.40% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->03.38% (2,875B) in 46 places, all below massif's threshold (1.00%)
+| 
+->01.83% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->01.83% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->01.83% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->01.83% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->01.83% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->01.83% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->01.83% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->01.41% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->01.41% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->01.41% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->01.41% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->01.41% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->01.41% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->01.41% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->01.41% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->01.41% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->01.41% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->01.41% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->01.41% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->01.41% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->01.41% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->01.41% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->01.41% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->01.41% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->01.41% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->01.41% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->01.41% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->01.41% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.20% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+  ->01.20% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+    ->01.20% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+      ->01.20% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+        ->01.20% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+          ->01.20% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+            ->01.20% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+              ->01.20% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+                ->01.20% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+                  ->01.20% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+                    ->01.20% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+                      ->01.20% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+                        
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 53      2,601,864           87,240           39,447         4,105       43,688
+45.22% (39,447B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->18.45% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->09.23% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->09.23% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->09.23% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->09.23% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->09.23% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->09.23% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->09.23% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->09.23% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->09.23% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->09.23% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->09.93% (8,666B) 0x4A5E50E: strdup (strdup.c:42)
+| ->04.53% (3,956B) 0x133F9C: HYDU_strdup_list (string.c:125)
+| | ->04.53% (3,956B) 0x11FBF1: HYD_pmcd_pmi_fill_in_exec_launch_info (pmiserv_utils.c:489)
+| |   ->04.53% (3,956B) 0x117FCC: HYD_pmci_launch_procs (pmiserv_pmci.c:121)
+| |     ->04.53% (3,956B) 0x10FE5F: main (mpiexec.c:331)
+| |       
+| ->03.54% (3,084B) 0x1302C4: HYDU_env_create (env.c:116)
+| | ->03.54% (3,084B) 0x130478: HYDU_append_env_to_list (env.c:191)
+| |   ->03.53% (3,082B) 0x1307D1: HYDU_append_env_str_to_list (env.c:250)
+| |   | ->03.53% (3,082B) 0x130A5E: HYDU_list_inherited_env (env.c:66)
+| |   |   ->03.53% (3,082B) 0x10FA59: main (mpiexec.c:269)
+| |   |     
+| |   ->00.00% (2B) in 1+ places, all below ms_print's threshold (01.00%)
+| |   
+| ->01.14% (997B) 0x12F004: HYDU_find_in_path (args.c:68)
+| | ->01.14% (997B) 0x12F89D: HYDU_find_full_path (args.c:370)
+| | | ->01.14% (997B) 0x141D7B: ssh_get_path (external_common_launch.c:22)
+| | |   ->01.14% (997B) 0x141D7B: HYDT_bscd_common_launch_procs (external_common_launch.c:113)
+| | |     ->01.14% (997B) 0x135334: HYDT_bsci_launch_procs (bsci_launch.c:17)
+| | |       ->01.14% (997B) 0x1180F3: HYD_pmci_launch_procs (pmiserv_pmci.c:132)
+| | |         ->01.14% (997B) 0x10FE5F: main (mpiexec.c:331)
+| | |           
+| | ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| | 
+| ->00.72% (629B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->09.17% (8,000B) 0x11CFED: HYD_pmcd_pmi_fill_in_proxy_args (pmiserv_utils.c:54)
+| ->09.17% (8,000B) 0x117F04: HYD_pmci_launch_procs (pmiserv_pmci.c:118)
+|   ->09.17% (8,000B) 0x10FE5F: main (mpiexec.c:331)
+|     
+->03.33% (2,901B) in 46 places, all below massif's threshold (1.00%)
+| 
+->01.79% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->01.79% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->01.79% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->01.79% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->01.79% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->01.79% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->01.79% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->01.38% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->01.38% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->01.38% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->01.38% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->01.38% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->01.38% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->01.38% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->01.38% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->01.38% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->01.38% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->01.38% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->01.38% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->01.38% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->01.38% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->01.38% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->01.38% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->01.38% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->01.38% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->01.38% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->01.38% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->01.38% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.17% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+  ->01.17% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+    ->01.17% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+      ->01.17% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+        ->01.17% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+          ->01.17% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+            ->01.17% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+              ->01.17% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+                ->01.17% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+                  ->01.17% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+                    ->01.17% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+                      ->01.17% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+                        
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 54      2,635,528           85,880           39,435         4,117       42,328
+ 55      2,668,248           85,192           39,423         4,113       41,656
+ 56      2,702,080           87,216           39,427         4,109       43,680
+ 57      2,734,608           67,952           38,471         4,073       25,408
+ 58      2,791,520           43,392           38,516         4,116          760
+ 59      2,824,032           35,920           31,007         3,881        1,032
+ 60      3,360,792          560,584          555,612         3,996          976
+ 61      3,360,792          560,584          555,612         3,996          976
+99.11% (555,612B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.53% (524,288B) 0x11A979: handle_pmi_cmd (pmiserv_cb.c:33)
+| ->93.53% (524,288B) 0x11A979: control_cb (pmiserv_cb.c:285)
+|   ->93.53% (524,288B) 0x13B238: HYDT_dmxu_poll_wait_for_event (demux_poll.c:76)
+|     ->93.53% (524,288B) 0x11846B: HYD_pmci_wait_for_completion (pmiserv_pmci.c:193)
+|       ->93.53% (524,288B) 0x110392: main (mpiexec.c:335)
+|         
+->02.87% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->01.44% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->01.44% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->01.44% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->01.44% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->01.44% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->01.44% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->01.44% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->01.44% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->01.44% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->01.44% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->01.37% (7,664B) in 58 places, all below massif's threshold (1.00%)
+| 
+->01.35% (7,564B) 0x4A5E50E: strdup (strdup.c:42)
+  ->01.35% (7,564B) in 87 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 62      3,899,688           37,400           32,420         4,004          976
+ 63      4,425,792          561,648          556,665         4,007          976
+ 64      4,458,304          562,288          556,875         4,189        1,224
+ 65      4,985,704           37,352           32,377         3,999          976
+ 66      5,512,048          561,936          556,950         4,010          976
+ 67      5,532,088          567,048          559,794         4,190        3,064
+98.72% (559,794B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->92.46% (524,288B) 0x11A979: handle_pmi_cmd (pmiserv_cb.c:33)
+| ->92.46% (524,288B) 0x11A979: control_cb (pmiserv_cb.c:285)
+|   ->92.46% (524,288B) 0x13B238: HYDT_dmxu_poll_wait_for_event (demux_poll.c:76)
+|     ->92.46% (524,288B) 0x11846B: HYD_pmci_wait_for_completion (pmiserv_pmci.c:193)
+|       ->92.46% (524,288B) 0x110392: main (mpiexec.c:335)
+|         
+->02.84% (16,096B) 0x12D731: HYDU_alloc_exec (alloc.c:257)
+| ->01.42% (8,048B) 0x11297B: get_current_exec (utils.c:32)
+| | ->01.42% (8,048B) 0x114869: np_fn (utils.c:765)
+| |   ->01.42% (8,048B) 0x12E6F1: match_arg (args.c:155)
+| |     ->01.42% (8,048B) 0x12E6F1: HYDU_parse_array (args.c:177)
+| |       ->01.42% (8,048B) 0x112D7B: parse_args (utils.c:1641)
+| |         ->01.42% (8,048B) 0x11620B: HYD_uii_mpx_get_parameters (utils.c:1693)
+| |           ->01.42% (8,048B) 0x10F449: main (mpiexec.c:147)
+| |             
+| ->01.42% (8,048B) 0x12D9F0: add_exec_to_proxy (alloc.c:308)
+|   ->01.42% (8,048B) 0x12DE4A: HYDU_create_proxy_list (alloc.c:413)
+|     ->01.42% (8,048B) 0x10FCE9: main (mpiexec.c:272)
+|       
+->01.99% (11,258B) in 61 places, all below massif's threshold (1.00%)
+| 
+->01.44% (8,152B) 0x4A5E50E: strdup (strdup.c:42)
+  ->01.44% (8,152B) in 98 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 68      6,087,320           42,088           37,046         4,066          976
+ 69      6,613,664          566,096          561,049         4,071          976
+ 70      6,647,352          569,480          561,851         4,461        3,168
+ 71      6,679,976          569,480          561,851         4,461        3,168
+ 72      7,236,088           41,800           36,761         4,063          976
+ 73      7,268,600           41,768           36,767         4,073          928
+ 74      7,348,976          100,768           95,750         3,898        1,120
+ 75      7,417,304          166,344          161,310         3,914        1,120
+ 76      7,449,840          159,120          156,533         1,867          720
+ 77      7,547,832           71,656           70,250           734          672
+98.04% (70,250B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->91.49% (65,560B) 0x132E3E: alloc_fwd_hash (sock.c:323)
+| ->91.49% (65,560B) 0x132E3E: HYDU_sock_forward_stdio (sock.c:368)
+|   ->91.49% (65,560B) 0x140C0C: HYDT_bscu_stdio_cb (bscu_cb.c:19)
+|     ->91.49% (65,560B) 0x13B238: HYDT_dmxu_poll_wait_for_event (demux_poll.c:76)
+|       ->91.49% (65,560B) 0x13598E: HYDT_bscu_wait_for_completion (bscu_wait.c:59)
+|         ->91.49% (65,560B) 0x1356C4: HYDT_bsci_wait_for_completion (bsci_wait.c:20)
+|           ->91.49% (65,560B) 0x118714: HYD_pmci_wait_for_completion (pmiserv_pmci.c:214)
+|             ->91.49% (65,560B) 0x110392: main (mpiexec.c:335)
+|               
+->02.18% (1,560B) 0x4AFC5E4: make_request (check_pf.c:235)
+| ->02.18% (1,560B) 0x4AFC5E4: __check_pf (check_pf.c:329)
+|   ->02.18% (1,560B) 0x4AC59EE: getaddrinfo (getaddrinfo.c:2206)
+|     ->02.18% (1,560B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|       ->02.18% (1,560B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|         ->02.18% (1,560B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|           ->02.18% (1,560B) 0x10FF1E: main (mpiexec.c:286)
+|             
+->01.68% (1,202B) 0x400D273: _dl_new_object (dl-object.c:89)
+| ->01.68% (1,202B) 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+|   ->01.68% (1,202B) 0x400A61A: _dl_map_object (dl-load.c:2236)
+|     ->01.68% (1,202B) 0x4015D36: dl_open_worker (dl-open.c:513)
+|       ->01.68% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|         ->01.68% (1,202B) 0x40155F9: _dl_open (dl-open.c:837)
+|           ->01.68% (1,202B) 0x4B1E860: do_dlopen (dl-libc.c:96)
+|             ->01.68% (1,202B) 0x4B1F8B7: _dl_catch_exception (dl-error-skeleton.c:208)
+|               ->01.68% (1,202B) 0x4B1F982: _dl_catch_error (dl-error-skeleton.c:227)
+|                 ->01.68% (1,202B) 0x4B1E994: dlerror_run (dl-libc.c:46)
+|                   ->01.68% (1,202B) 0x4B1E994: __libc_dlopen_mode (dl-libc.c:195)
+|                     ->01.68% (1,202B) 0x4B0262B: nss_load_library (nsswitch.c:359)
+|                       ->01.68% (1,202B) 0x4B02ED8: __nss_lookup_function (nsswitch.c:467)
+|                         ->01.68% (1,202B) 0x4B03090: __nss_lookup (nsswitch.c:198)
+|                           ->01.68% (1,202B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|                             ->01.68% (1,202B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|                               ->01.68% (1,202B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|                                 ->01.68% (1,202B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                                   ->01.68% (1,202B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                                     ->01.68% (1,202B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                                       ->01.68% (1,202B) 0x10FF1E: main (mpiexec.c:286)
+|                                         
+->01.43% (1,022B) 0x4B02156: nss_parse_service_list (nsswitch.c:641)
+| ->01.43% (1,022B) 0x4B02BCB: nss_getline (nsswitch.c:798)
+|   ->01.43% (1,022B) 0x4B02BCB: nss_parse_file (nsswitch.c:592)
+|     ->01.43% (1,022B) 0x4B02BCB: __nss_database_lookup2 (nsswitch.c:135)
+|       ->01.43% (1,022B) 0x4B04ACB: __nss_hosts_lookup2 (XXX-lookup.c:60)
+|         ->01.43% (1,022B) 0x4AF0007: gethostbyname2_r@@GLIBC_2.2.5 (getXXbyYY_r.c:269)
+|           ->01.43% (1,022B) 0x4AC391E: gaih_inet.constprop.0 (getaddrinfo.c:571)
+|             ->01.43% (1,022B) 0x4AC50D8: getaddrinfo (getaddrinfo.c:2256)
+|               ->01.43% (1,022B) 0x142FFD: MPL_get_sockaddr (in /usr/local/bin/mpiexec.hydra)
+|                 ->01.43% (1,022B) 0x143924: init_lhost_list (in /usr/local/bin/mpiexec.hydra)
+|                   ->01.43% (1,022B) 0x143A0F: MPL_host_is_local (in /usr/local/bin/mpiexec.hydra)
+|                     ->01.43% (1,022B) 0x10FF1E: main (mpiexec.c:286)
+|                       
+->01.26% (906B) in 63 places, all below massif's threshold (1.00%)
+  
+--------------------------------------------------------------------------------
+  n        time(B)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 78      7,613,568            6,080            4,690           718          672
+ 79      7,646,080              464                0             0          464

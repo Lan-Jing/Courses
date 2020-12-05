@@ -1,0 +1,24 @@
+CC = gcc
+flags = -g -Ofast -fPIC -lpthread
+
+vpath %.h include
+vpath %.c src
+
+source = src/parallel_for.c src/helper.c
+objects = parallel_for.o helper.o
+target = libparallel.so
+
+$(target) : $(objects)
+	$(CC) -shared -o libparallel.so $(objects)
+
+parallel_for.o : parallel_for.c
+	$(CC) -o parallel_for.o -c src/parallel_for.c $(flags)
+
+helper.o : helper.c
+	$(CC) -o helper.o -c src/helper.c $(flags)
+
+clean :
+	-rm $(target) $(objects)
+
+cleanobj :
+	-rm $(objects)

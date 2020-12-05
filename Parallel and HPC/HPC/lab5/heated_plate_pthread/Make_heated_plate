@@ -1,0 +1,24 @@
+CC = gcc
+flags = -g -Ofast -lpthread -fopenmp
+
+vpath %.h include
+vpath %.c src
+
+source = src/heated_plate_pthread.c src/functor.c
+objects = heated_plate_pthread.o functor.o
+target = heated_plate
+
+$(target) : $(objects)
+	$(CC) -o $(target) $(objects) $(flags) -L./ -lparallel
+
+heated_plate_pthread.o : heated_plate_pthread.c
+	$(CC) -o heated_plate_pthread.o -c src/heated_plate_pthread.c $(flags)
+
+functor.o : functor.c
+	$(CC) -o functor.o -c src/functor.c $(flags)
+
+clean :
+	-rm $(target) $(objects)
+
+cleanobj :
+	-rm $(objects)
