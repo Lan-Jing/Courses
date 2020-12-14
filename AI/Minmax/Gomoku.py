@@ -2,7 +2,6 @@ import sys
 import pygame
 
 from checkerboard import *
-import ai_greedy as ag
 import ai_minmax as am
 
 def _get_init_player():
