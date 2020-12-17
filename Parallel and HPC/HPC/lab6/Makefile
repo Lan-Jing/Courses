@@ -1,5 +1,5 @@
 CXX = nvcc
-flags = -rdc=true -O3 -Xptxas=-O3 -Xcompiler -fopenmp
+flags = -O3 -lcublas -Xcompiler -fopenmp
 
 vpath %.h include
 vpath %.cu src

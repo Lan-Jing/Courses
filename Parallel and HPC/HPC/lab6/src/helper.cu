@@ -41,3 +41,8 @@ void CUDA_CHECK_LAST()
     if (err != cudaSuccess) 
     printf("Error: %s\n", cudaGetErrorString(err));
 }
+
+double avgTime_omp = 0;
+double avgTime_cuda = 0;
+double avgTime_ompCuda = 0;
+double avgTime_cublas = 0;
