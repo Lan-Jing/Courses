@@ -17,3 +17,6 @@ int Max(int a, int b)
 {
     return a > b ? a : b;
 }
+
+double omp_avgTime = 0, omp_stime = 0;
+double cuda_avgTime = 0, cuda_stime = 0;
