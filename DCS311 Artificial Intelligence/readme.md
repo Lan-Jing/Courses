@@ -21,9 +21,9 @@
   * Heuristic method: IDA*.
 * Lab7: Game Searching.
   * Minmax Tree
-  * alpha-beta proning
-  * Design a good scoring metric.
+  * alpha-beta pruning
+  * Design an acceptable scoring metric.
 * Final Project: Reinforcement Learning on Reversi.
   * ?
 * Pattern Recognition Homework3: Segment Chinese sentence with HMM.
-  * DP on Markov chain.
+  * Implementation of Viterbi Algorithm: DP on a Markov chain.
