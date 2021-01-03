@@ -24,6 +24,6 @@
   * alpha-beta pruning
   * Design an acceptable scoring metric.
 * Final Project: Reinforcement Learning on Reversi.
-  * ?
+  * Alpha-zero based RL system.
 * Pattern Recognition Homework3: Segment Chinese sentence with HMM.
-  * Implementation of Viterbi Algorithm: DP on a Markov chain.
+  * Viterbi Algorithm: DP on a Markov chain.

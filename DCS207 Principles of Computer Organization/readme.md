@@ -1,5 +1,6 @@
 # Final Project for DCS207 Principles of Computer Organization: MIPS CPU on FPGA platform.
 
+* Rank 1/~240
 * Single-cycle CPU
   * PC controller
   * Arithmetic controller

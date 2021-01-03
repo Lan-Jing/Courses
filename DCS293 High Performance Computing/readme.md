@@ -1,5 +1,12 @@
 # Laboratory Homework for DCS293 High Performance Computing.
 
+* Environment
+  * Most projects depend on:
+    * gcc@7.5.0
+    * openmpi@3.1.6
+    * cuda@10.1.243
+  * Dependencies are handled via Spack on TH-2K cluster: https://github.com/spack/spack
+
 * Lab1: Basic GEMM optimization
   * Strassen's recursive multiplication
   * OpenMP parallelism
@@ -24,7 +31,7 @@
   * 1*8 tiling 
   * Scheduling 4 Tesla V100 with 4 OpenMP threads
 * Lab7: Convolution with CUDA
-  * padding
+  * Padding
   * with shared memory
-  * solve it via im2col + GEMM
-  * cudNN
+  * Solve it via im2col + GEMM
+  * Call cuDNN routines
