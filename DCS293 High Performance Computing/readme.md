@@ -26,4 +26,5 @@
 * Lab7: Convolution with CUDA
   * padding
   * with shared memory
-  * ?
+  * solve it via im2col + GEMM
+  * cudNN

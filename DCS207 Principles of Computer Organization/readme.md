@@ -9,7 +9,7 @@
   * Simulation on each unit to ensure expected functionality.
 * Pipeline CPU
   * Reuse most components.
-  * Support most instructions, including jmp/jr/mul ans so on.
+  * Add registers between two stages.
+  * Support most instructions, including jmp/jr/mul an so on.
   * For jump instructions, use a signal to flush the pipeline.
   * Support forwarding.
-  * Add registers between two stages.
