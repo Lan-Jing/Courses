@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// This manager handles the simplest lock/unlock operations to the remote files
+service lock_manager {
+    // Attempt to get an exclusive lock to a given file
+    rpc lock(fileInfo) returns (lm_reply) {}
+    // Attempt to unlock the given file
+    rpc unlock(fileInfo) returns (lm_reply) {}
+}
+
+message fileInfo {
+    string filePath = 1;
+    // exclusive : 1, shared : 0
+    int32 lockType = 2;
+}
+
+message lm_reply {
+    // successful : 1, failed : 0
+    int32 done = 1;
+}

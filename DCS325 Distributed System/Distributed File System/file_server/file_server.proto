@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+service file_server {
+    // Get the current path of the server
+    rpc pwd(stringMes) returns (stringMes) {}
+    // List files and sub-dirs in the current dir
+    rpc ls (id) returns (stringMes) {}
+    // Create a new dir
+    rpc cd (stringMes) returns (fs_reply) {}
+    // Upload a file to a given path
+    rpc mkdir (stringMes) returns (fs_reply) {}
+    // Remove a file or an empty dir
+    rpc rm (stringMes) returns (fs_reply) {}
+    // Change current dir
+    rpc upload(upRequest) returns (fs_reply) {}
+    // Download a file from a given path
+    rpc download(downRequest) returns (bufferMes) {}
+}
+
+message upRequest {
+    string path = 1;
+    bytes buffer = 2;
+    int32 id = 3;
+    int32 cascading = 4;
+}
+
+message downRequest {
+    string path = 1;
+    int32 id = 2;
+}
+
+message stringMes {
+    string str = 1;
+    int32 id = 2;
+    int32 cascading = 3;
+}
+
+message bufferMes {
+    bytes buffer = 1;
+    int32 done = 2;
+}
+
+message fs_reply {
+    int32 done = 1;
+}
+
+message id {
+    int32 id = 1;
+}

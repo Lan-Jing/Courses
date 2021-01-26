@@ -26,4 +26,4 @@
 * Final Project: Reinforcement Learning on Reversi.
   * Alpha-zero based RL system.
 * Pattern Recognition Homework3: Segment Chinese sentence with HMM.
-  * Viterbi Algorithm: DP on a Markov chain.
+  * Viterbi's Algorithm: DP on a Markov chain.

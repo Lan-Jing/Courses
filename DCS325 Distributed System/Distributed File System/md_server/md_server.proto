@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+// This metadata server keeps track of available file servers
+service md_server {
+    // Make connections, assign unique id to clients
+    rpc connect (empty) returns (ms_reply) {}
+    // The client returns id
+    rpc disconnect (ms_reply) returns (ms_reply) {}
+    // An online file server should call this rpc periodically
+    rpc online(serverInfo) returns (ms_reply) {}
+    // Remove a given server
+    rpc offline(serverInfo) returns (ms_reply) {}
+    // Returns all online servers
+    rpc listServer(empty) returns (serverInfoList) {}
+}
+
+message serverInfo {
+    string ip = 1;
+    string port = 2;
+    int32 id = 3;
+}
+
+message serverInfoList {
+    int32 done = 1;
+    repeated serverInfo sList = 2;
+}
+
+message empty {}
+
+message ms_reply {
+    // successful : 1, failed : 0
+    int32 done = 1;
+}
