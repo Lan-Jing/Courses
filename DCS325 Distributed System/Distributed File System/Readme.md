@@ -33,13 +33,22 @@ Jan. 24th, 2021 ~ Jan. 25th, 2021
 
 ## Structure and Usage
 
-### Structure and Features
+### Structure and Workflow
 
-![struct](/assets/struct.png)
+![Struct](assets/struct.png?raw=true "Structure of the File System")
 
-* Unique IDs for both servers and clients. Per-client remote working directory
-* Support shared(read)/exclusive(write) access
-* Transaction-like atomicity. Broadcast updates to replicas
+
+* The lock manager and the metadata server(MDS) are first online.
+* Then file servers should register themselves to the MDS, getting their unique IDs.
+* File servers send heartbeat to the MDS in every circle(e.g. five seconds), or will be considered offline.
+* Clients request list of active servers, then choose one to connect to.
+
+### Features
+
+* Unique IDs for both file servers and clients. Each client can hold its own remote working directory.
+* Support shared(read)/exclusive(write) file access.
+* Transaction-like atomicity. Broadcast updates to replicas within a remote operation.
+* Simplest isolation. Clients no premitted to see and operate outside the root of servers.
 
 ### Usage
 
