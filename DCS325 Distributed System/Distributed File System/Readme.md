@@ -1,6 +1,6 @@
 # The Simplest Distributed File System 
 
-As the final project of DCS325 Distribued System
+As the final project of DCS325 Distributed System
 
 Jan. 24th, 2021 ~ Jan. 25th, 2021
 
