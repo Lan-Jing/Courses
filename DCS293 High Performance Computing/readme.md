@@ -1,7 +1,7 @@
 # Laboratory Homework for DCS293 High Performance Computing.
 
 * Environment
-  * Most projects depend on:
+  * Projects depend on:
     * gcc@7.5.0
     * openmpi@3.1.6
     * cuda@10.1.243
@@ -34,4 +34,4 @@
   * Padding
   * with shared memory
   * Solve it via im2col + GEMM
-  * Call cuDNN routines
+  * Call cuDNN routines for comparasion

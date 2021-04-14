@@ -38,7 +38,7 @@ Jan. 24th, 2021 ~ Jan. 25th, 2021
 ![Struct](assets/struct.png?raw=true "Structure of the File System")
 
 
-* The lock manager and the metadata server(MDS) are first online.
+* The lock manager and the metadata server(MDS) should be first online.
 * Then file servers should register themselves to the MDS, getting their unique IDs.
 * File servers send heartbeat to the MDS in every circle(e.g. five seconds), or will be considered offline.
 * Clients request list of active servers, then choose one to connect to.
