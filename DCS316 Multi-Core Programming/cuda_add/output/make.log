@@ -1,0 +1,48 @@
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o main.o -c src/main.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.o -c src/add.cu -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70
+nvcc -o add.exe main.o add.o helper.o -O3 -Xcompiler -fopenmp -Xptxas -O3 -arch sm_70

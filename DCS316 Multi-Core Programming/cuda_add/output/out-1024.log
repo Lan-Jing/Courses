@@ -1,0 +1,192 @@
+Matrix Size:               1024
+Thread Block Size:            4
+Workload per CUDA thread:     1
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.247635 ms
+GPU_1D Min Execution Time:  0.115328 ms
+GPU_2D Min Execution Time:  0.115712 ms
+
+Matrix Size:               1024
+Thread Block Size:            8
+Workload per CUDA thread:     1
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.243705 ms
+GPU_1D Min Execution Time:  0.033408 ms
+GPU_2D Min Execution Time:  0.033888 ms
+
+Matrix Size:               1024
+Thread Block Size:           16
+Workload per CUDA thread:     1
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.248015 ms
+GPU_1D Min Execution Time:  0.027200 ms
+GPU_2D Min Execution Time:  0.037216 ms
+
+Matrix Size:               1024
+Thread Block Size:           32
+Workload per CUDA thread:     1
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.221644 ms
+GPU_1D Min Execution Time:  0.023712 ms
+GPU_2D Min Execution Time:  0.053024 ms
+
+Matrix Size:               1024
+Thread Block Size:            4
+Workload per CUDA thread:     4
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.251878 ms
+GPU_1D Min Execution Time:  0.036576 ms
+GPU_2D Min Execution Time:  0.037120 ms
+
+Matrix Size:               1024
+Thread Block Size:            8
+Workload per CUDA thread:     4
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.234496 ms
+GPU_1D Min Execution Time:  0.026496 ms
+GPU_2D Min Execution Time:  0.031072 ms
+
+Matrix Size:               1024
+Thread Block Size:           16
+Workload per CUDA thread:     4
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.256810 ms
+GPU_1D Min Execution Time:  0.024864 ms
+GPU_2D Min Execution Time:  0.032704 ms
+
+Matrix Size:               1024
+Thread Block Size:           32
+Workload per CUDA thread:     4
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.231914 ms
+GPU_1D Min Execution Time:  0.027232 ms
+GPU_2D Min Execution Time:  0.059936 ms
+
+Matrix Size:               1024
+Thread Block Size:            4
+Workload per CUDA thread:    16
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.253692 ms
+GPU_1D Min Execution Time:  0.035968 ms
+GPU_2D Min Execution Time:  0.034304 ms
+
+Matrix Size:               1024
+Thread Block Size:            8
+Workload per CUDA thread:    16
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.262819 ms
+GPU_1D Min Execution Time:  0.025184 ms
+GPU_2D Min Execution Time:  0.031552 ms
+
+Matrix Size:               1024
+Thread Block Size:           16
+Workload per CUDA thread:    16
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.262156 ms
+GPU_1D Min Execution Time:  0.027456 ms
+GPU_2D Min Execution Time:  0.035776 ms
+
+Matrix Size:               1024
+Thread Block Size:           32
+Workload per CUDA thread:    16
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.261404 ms
+GPU_1D Min Execution Time:  0.026688 ms
+GPU_2D Min Execution Time:  0.060256 ms
+
+Matrix Size:               1024
+Thread Block Size:            4
+Workload per CUDA thread:    64
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.251625 ms
+GPU_1D Min Execution Time:  0.044576 ms
+GPU_2D Min Execution Time:  0.039008 ms
+
+Matrix Size:               1024
+Thread Block Size:            8
+Workload per CUDA thread:    64
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.259496 ms
+GPU_1D Min Execution Time:  0.045248 ms
+GPU_2D Min Execution Time:  0.046720 ms
+
+Matrix Size:               1024
+Thread Block Size:           16
+Workload per CUDA thread:    64
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.236899 ms
+GPU_1D Min Execution Time:  0.043360 ms
+GPU_2D Min Execution Time:  0.055008 ms
+
+Matrix Size:               1024
+Thread Block Size:           32
+Workload per CUDA thread:    64
+Test Rounds:                 20
+   Check Passed
+   Check Passed
+   Check Passed
+   Check Passed
+CPU    Min Execution Time:  0.217415 ms
+GPU_1D Min Execution Time:  0.047232 ms
+GPU_2D Min Execution Time:  0.164288 ms
+
